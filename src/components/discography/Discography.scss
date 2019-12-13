@@ -1,0 +1,85 @@
+@import "../../variables";
+.discography {
+	display: grid;
+	grid-template-columns: [left-side-start] 1fr [left-side-end content-first-start] 2fr [content-first-end content-second-start] 2fr [content-second-end right-side-start] 1fr;
+	list-style: none;
+	font-family: $font-primary;
+	grid-template-rows:
+		[heading-start] fit-content(10%) [heading-end list-start] fit-content(90%)
+		[list-end];
+	gap: 2rem;
+	&-artist {
+		grid-column: content-first-start/content-second-end;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+
+		&--img {
+			border-radius: $artist-border-radius;
+			margin: 0 2rem 4rem 0;
+			justify-self: center;
+		}
+		&--title {
+			font-family: $font-primary;
+		}
+	}
+
+	&-track {
+		grid-column: content-first-start/content-second-end;
+		display: grid;
+		grid-template-columns:
+			[art-start] fit-content(20%)
+			[art-end name-start] max-content [name-end dash-start] fit-content(5%)
+			[dash-end album-start] fit-content(30%)
+			[album-end gap-start] 1fr [gap-end duration-start] fit-content(10%)
+			[duration-end];
+		grid-template-rows: [name-start] 1fr [name-end artist-start] 1fr [artist-end];
+		gap: 0 0.5rem;
+		align-items: center;
+
+		&--explicit {
+			display: inline-flex;
+			flex-direction: column;
+			justify-content: center;
+			margin-left: 0.5rem;
+		}
+		&--albumart {
+			grid-column: art-start/art-end;
+			grid-row: name-start/ artist-end;
+			border-radius: $img-border-radius;
+			// align-self: start;
+			// height: 100%;
+		}
+		&--name {
+			grid-column: name-start/name-end;
+			grid-row: name-start/name-end;
+			margin: 0;
+			display: flex;
+		}
+
+		&--artist {
+			margin: 0;
+			grid-row: artist-start/artist-end;
+			grid-column: name-start/name-end;
+			align-self: start;
+		}
+		&--duration {
+			grid-row: name-start/name-end;
+
+			margin: 0;
+			grid-column: duration-start/duration-end;
+		}
+		&--dash {
+			grid-row: name-start/name-end;
+			grid-column: dash-start/dash-end;
+			margin: 0;
+		}
+		&--album {
+			grid-row: artist-start/artist-end;
+			grid-column: name-start/name-end;
+			margin: 0;
+			text-decoration: none;
+			color: black;
+		}
+	}
+}

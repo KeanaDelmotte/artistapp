@@ -1,0 +1,36 @@
+@import "../../mixins.scss";
+@import "../../variables";
+.artist {
+	&-albums {
+		@include album-display;
+
+		grid-column: content-start / content-end;
+		grid-row: albums-start/albums-end;
+	}
+	&-singles {
+		@include album-display;
+
+		grid-column: content-start / content-end;
+		grid-row: singles-start/singles-end;
+	}
+	&-btnlink {
+		grid-row: btn-start/btn-end;
+		justify-self: center;
+		grid-column: content-start/content-end;
+		align-self: center;
+		margin: 2rem;
+	}
+	&-btn {
+		background-color: transparent;
+		border: 2px solid black;
+		border-radius: 3px;
+		font-family: $font-primary;
+		height: 3rem;
+		transition: all 0.2s;
+		box-shadow: 2px 3px 3px 2px lightgray;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}

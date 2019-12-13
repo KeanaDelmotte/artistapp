@@ -1,0 +1,18 @@
+@import "../../variables";
+
+.artist {
+	grid-row: content-start/content-end;
+	grid-column: 1 / span 1;
+
+	font-family: $font-primary;
+	display: grid;
+	grid-template-columns: [sidebar1-start]1fr [sidebar1-end content-start] 8fr [content-end sidebar2-start] 1fr [sidebar2-end];
+	grid-template-rows:
+		[artistName-start ] fit-content(10%)
+		[artistName-end albums-start]fit-content(40%)
+		[albums-end singles-start]
+		fit-content(40%) [singles-end btn-start] fit-content(10%) [btn-end];
+	justify-items: center;
+	align-items: center;
+	gap: 10rem 0;
+}

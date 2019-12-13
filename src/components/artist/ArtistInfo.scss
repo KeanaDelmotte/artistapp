@@ -1,0 +1,32 @@
+@import "../../variables";
+.artist-info {
+	grid-row: artistName-start/artistName-end;
+	grid-column: content-start / content-end;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	gap: 0 2rem;
+	&--text {
+		grid-column: 2 / span 1;
+		justify-self: start;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	&--name {
+		font-family: $font-primary;
+		text-decoration: none;
+		color: black;
+		font-size: 2rem;
+	}
+	&--photo {
+		border-radius: $artist-border-radius;
+		width: 100%;
+	}
+	&--fans {
+		font-family: $font-primary;
+	}
+	&--albums {
+		font-family: $font-primary;
+	}
+}
