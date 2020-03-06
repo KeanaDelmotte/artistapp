@@ -28,7 +28,6 @@ const DiscographyDisplay: React.FC = () => {
 			setArtistSongs(discogData.data);
 		});
 	}, [artistid]);
-
 	if (!artistSongs) {
 		return <div className="loader"></div>;
 	}
@@ -38,6 +37,8 @@ const DiscographyDisplay: React.FC = () => {
 			return tracks[0].contributors.find(artist => `${artist.id}` == artistid);
 		}
 	};
+
+	console.log(artistid);
 
 	return (
 		<ul className="discography">

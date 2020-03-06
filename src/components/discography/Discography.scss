@@ -47,8 +47,6 @@
 			grid-column: art-start/art-end;
 			grid-row: name-start/ artist-end;
 			border-radius: $img-border-radius;
-			// align-self: start;
-			// height: 100%;
 		}
 		&--name {
 			grid-column: name-start/name-end;

@@ -6,9 +6,18 @@ import { Artist as IArtist } from "../../interfaces";
 import Artist from "./Artist";
 import ArtistInfo from "./ArtistInfo";
 import RecordsDisplay from "./RecordsDisplay";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	useParams,
+	Redirect
+} from "react-router-dom";
 import AlbumInfo from "../album/AlbumInfo";
 import DiscographyDisplay from "../discography/Discography";
+import HomeSearch from "../home/HomeSearch";
+import { pathToFileURL } from "url";
 
 interface SearchResult {
 	data: Array<IArtist>;
@@ -39,21 +48,18 @@ const App: React.FC = () => {
 		setArtist(artist);
 		setLoading(false);
 	}
-	function getRandomArtistIds(limit: number) {
-		let artistIds = [];
-		for (let i = 0; i < 16; i++) {
-			let number = Math.floor(Math.random() * limit);
-			artistIds.push(number);
-		}
-		return artistIds;
-	}
-	console.log(getRandomArtistIds(10000000));
 	return (
 		<Router>
 			<Switch>
-				<Route exact path="/artist">
+				<Route exact path="/">
 					<div className="content">
 						<Searchbar onSubmit={handleSubmit} />
+						{!artist && (
+							<h1 className="heading">
+								Hey there! <br />
+								Search for an artist
+							</h1>
+						)}
 						{artist && (
 							<Artist>
 								<ArtistInfo artist={artist} />

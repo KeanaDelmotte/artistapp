@@ -11,7 +11,6 @@ const ArtistInfo: React.FC<ArtistInfoProps> = ({ artist }) => {
 		<div className="artist-info">
 			<a href={artist.link} className="artist-info--photo">
 				<picture>
-					{/* <source srcSet={artist.picture_small} media="(max-width: 476px" /> */}
 					<img
 						src={artist.picture_medium}
 						alt="artist"

@@ -3,18 +3,13 @@
 	grid-row: searchbar-start/ searchbar-end;
 	grid-column: 1 / span 1;
 	font-family: $font-primary;
-	// grid-column: content-start / content-end;
-	// grid-row: searchbar-start / searchbar-end;
 	align-self: center;
 	justify-self: center;
-	// border: 1px solid grey;
-	// height: 5vh;
 	display: inline-block;
 	position: relative;
 	height: 35px;
 	width: 35px;
 	box-sizing: border-box;
-	// margin: 0px 8px 7px 0px;
 	padding: 5px 9px 0px 9px;
 	border: 3px solid grey;
 	border-radius: 25px;
